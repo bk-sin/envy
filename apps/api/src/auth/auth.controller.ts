@@ -58,9 +58,9 @@ export class AuthController {
   @ApiBody({
     type: RegisterDto,
     examples: {
-      customer: {
-        summary: 'Register as Customer',
-        description: 'Register a new customer account',
+      user: {
+        summary: 'Register as User',
+        description: 'Register a new user account',
         value: {
           firstName: 'Ana',
           lastName: 'López',
