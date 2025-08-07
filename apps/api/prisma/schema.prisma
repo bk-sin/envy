@@ -1,0 +1,198 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  firstName String
+  lastName  String
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions               Session[]
+  apiKeys                ApiKey[]
+  projectMemberships     ProjectMember[]
+  invitations            Invitation[]
+  auditLogs              AuditLog[]
+  environmentPermissions EnvironmentPermission[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model ApiKey {
+  id         String    @id @default(cuid())
+  name       String
+  key        String    @unique
+  userId     String
+  lastUsedAt DateTime?
+  expiresAt  DateTime?
+  createdAt  DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("api_keys")
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String?
+  avatar      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  members      ProjectMember[]
+  environments Environment[]
+  invitations  Invitation[]
+  auditLogs    AuditLog[]
+
+  @@map("projects")
+}
+
+model ProjectMember {
+  id        String   @id @default(cuid())
+  userId    String
+  projectId String
+  role      Role     @default(DEVELOPER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, projectId])
+  @@map("project_members")
+}
+
+model Invitation {
+  id          String           @id @default(cuid())
+  email       String
+  projectId   String
+  invitedById String
+  role        Role             @default(DEVELOPER)
+  status      InvitationStatus @default(PENDING)
+  token       String           @unique
+  expiresAt   DateTime
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  invitedBy User    @relation(fields: [invitedById], references: [id], onDelete: Cascade)
+
+  @@map("invitations")
+}
+
+model Environment {
+  id        String          @id @default(cuid())
+  name      String
+  slug      String
+  type      EnvironmentType @default(CUSTOM)
+  projectId String
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  project                Project                 @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  variables              EnvironmentVariable[]
+  environmentPermissions EnvironmentPermission[]
+  auditLogs              AuditLog[]
+
+  @@unique([slug, projectId])
+  @@map("environments")
+}
+
+model EnvironmentPermission {
+  id            String   @id @default(cuid())
+  userId        String
+  environmentId String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, environmentId])
+  @@map("environment_permissions")
+}
+
+model EnvironmentVariable {
+  id            String     @id @default(cuid())
+  key           String
+  value         String
+  description   String?
+  environmentId String
+  syncStatus    SyncStatus @default(PENDING)
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+
+  @@unique([key, environmentId])
+  @@map("environment_variables")
+}
+
+model AuditLog {
+  id            String    @id @default(cuid())
+  action        String
+  entityType    String
+  entityId      String
+  userId        String?
+  projectId     String?
+  environmentId String?
+  oldValues     Json?
+  newValues     Json?
+  createdAt     DateTime  @default(now())
+
+  user        User?        @relation(fields: [userId], references: [id], onDelete: SetNull)
+  project     Project?     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  environment Environment? @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+
+  @@map("audit_logs")
+}
+
+enum Role {
+  OWNER
+  ADMIN
+  DEVELOPER
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+  EXPIRED
+}
+
+enum EnvironmentType {
+  DEVELOPMENT
+  STAGING
+  PRODUCTION
+  CUSTOM
+}
+
+enum SyncStatus {
+  PENDING
+  SYNCED
+  ERROR
+}
