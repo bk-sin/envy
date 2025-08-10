@@ -1,9 +1,11 @@
 import { Controller, All, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
+import { ApiExcludeController } from '@nestjs/swagger';
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 import { appRouter } from './router';
 import { IsPublic } from '../auth/decorators';
 
+@ApiExcludeController()
 @Controller('trpc')
 export class TrpcController {
   @IsPublic()
