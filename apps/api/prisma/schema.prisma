@@ -83,6 +83,8 @@ model ProjectMember {
   project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
 
   @@unique([userId, projectId])
+  @@index([projectId])
+  @@index([userId])
   @@map("project_members")
 }
 
@@ -119,6 +121,7 @@ model Environment {
   auditLogs              AuditLog[]
 
   @@unique([slug, projectId])
+  @@index([projectId])
   @@map("environments")
 }
 
@@ -149,6 +152,7 @@ model EnvironmentVariable {
   environment Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
 
   @@unique([key, environmentId])
+  @@index([environmentId])
   @@map("environment_variables")
 }
 
