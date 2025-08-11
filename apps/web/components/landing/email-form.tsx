@@ -64,7 +64,7 @@ export function EmailForm() {
           {...register("email")}
           type="email"
           placeholder="tu@email.com"
-          className="w-full h-14 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
+          className="w-full h-14 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
         />
         {errors.email && (
           <p className="text-red-400 text-sm mt-2">{errors.email.message}</p>

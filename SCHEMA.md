@@ -106,7 +106,7 @@ model ProjectMember {
 
 **Función:**
 
-- Define qué usuarios pertenecen a qué proyectos
+- Definí qué usuarios pertenecen a qué proyectos
 - Establece el rol del usuario en cada proyecto específico
 - Un usuario puede ser OWNER en un proyecto y DEVELOPER en otro
 
@@ -162,7 +162,7 @@ model EnvironmentPermission {
 
 **Función:**
 
-- Define qué DEVELOPERS pueden acceder a qué entornos específicos
+- Definí qué DEVELOPERS pueden acceder a qué entornos específicos
 - Solo aplica a usuarios con rol DEVELOPER
 - OWNER y ADMIN tienen acceso automático a todos los entornos
 

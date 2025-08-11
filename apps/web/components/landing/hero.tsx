@@ -12,9 +12,9 @@ export function Hero() {
         <div className="text-white">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium mb-8">
             <Rocket className="text-indigo-400 mr-2 w-4 h-4" />
-            Únete a la Beta Privada
+            Unite a la Beta Privada
           </div>
-          <h1 className="text-5xl lg:text-6xl font-black leading-tight mb-6">
+          <h1 className="text-5xl lg:text-6xl font-black leading-tighter mb-6">
             Deja de pasar archivos{" "}
             <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
               .env

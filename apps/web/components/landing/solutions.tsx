@@ -11,8 +11,8 @@ export function Solutions() {
             La solución que tu equipo necesita
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Una plataforma centralizada con CLI mágica que sincroniza
-            automáticamente las variables de entorno de todo tu equipo.
+            Una plataforma centralizada con CLI que sincroniza automáticamente
+            las variables de entorno de todo tu equipo.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

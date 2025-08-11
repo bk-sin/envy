@@ -53,13 +53,13 @@ export const featuresData = [
     icon: Gauge,
     title: "Dashboard Centralizado",
     description:
-      "Gestiona proyectos y variables desde una interfaz limpia. Define entornos, asigna permisos y mantén todo organizado.",
+      "Gestiona proyectos y variables desde una interfaz limpia. Definí entornos, asigna permisos y mantén todo organizado.",
     iconBgColor: "bg-indigo-100",
     iconTextColor: "text-indigo-600",
   },
   {
     icon: Terminal,
-    title: "CLI Mágica",
+    title: "CLI Sencilla",
     description:
       "Un simple 'secretsync pull' y tu archivo .env se actualiza automáticamente. Sin copiar, sin pegar.",
     iconBgColor: "bg-emerald-100",
@@ -72,7 +72,7 @@ export const featuresData = [
       "Roles granulares. Los juniors ven development, los seniors acceden a production. Seguridad sin complicaciones.",
     iconBgColor: "bg-purple-100",
     iconTextColor: "text-purple-600",
-  },
+  } /* 
   {
     icon: Puzzle,
     title: "Integraciones",
@@ -80,5 +80,5 @@ export const featuresData = [
       "Conecta con Vercel, Netlify, GitHub Actions, Docker. Inyecta variables de forma segura en tus pipelines de CI/CD.",
     iconBgColor: "bg-orange-100",
     iconTextColor: "text-orange-600",
-  },
+  }, */,
 ];

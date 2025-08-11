@@ -9,8 +9,8 @@ export function CtaSection() {
           ¿Listo para sincronizar a tu equipo?
         </h2>
         <p className="text-xl text-slate-300 mb-12">
-          Únete a cientos de equipos que ya están sincronizados. Sin
-          configuración compleja, sin migraciones dolorosas.
+          Unite y sincroniza tu equipo sin configuraciones complejas y sin
+          problemas.
         </p>
         <div className="max-w-md mx-auto mb-8">
           <EmailForm />
