@@ -3,16 +3,14 @@ import {
   Bug,
   Clock,
   Gauge,
-  Puzzle,
   Terminal,
   Users,
 } from "lucide-react";
 
 export const navLinks = [
-  { href: "#", label: "Features" },
-  { href: "#", label: "Pricing" },
-  { href: "#", label: "Documentation" },
-  { href: "#", label: "Company" },
+  { href: "#problems", label: "Problema" },
+  { href: "#solutions", label: "Solución" },
+  { href: "#beta", label: "Beta" },
 ];
 
 export const problemsData = [

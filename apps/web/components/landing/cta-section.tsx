@@ -3,7 +3,10 @@ import { EmailForm } from "./email-form";
 
 export function CtaSection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 to-indigo-900">
+    <section
+      id="beta"
+      className="py-24 bg-gradient-to-br from-slate-900 to-indigo-900"
+    >
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
           ¿Listo para sincronizar a tu equipo?

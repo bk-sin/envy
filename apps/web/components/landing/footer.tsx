@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EnvyIcon } from "../ui/envy-icon";
 
 export function Footer() {
   return (
@@ -6,19 +7,26 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
-            <span className="font-semibold">Envy</span>
+            <EnvyIcon />
+            <span className="text-lg font-bold">Envy</span>
           </div>
-          <div className="flex space-x-8 text-sm text-gray-400">
-            <Link href="#" className="hover:text-white">
+          <div className="flex items-center space-x-6 text-sm text-slate-400">
+            <Link
+              href="#"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
               Privacy
             </Link>
-            <Link href="#" className="hover:text-white">
+            <Link
+              href="#"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
               Terms
             </Link>
-            <Link href="#" className="hover:text-white">
+            <Link
+              href="#"
+              className="hover:text-white cursor-pointer transition-colors"
+            >
               Support
             </Link>
           </div>

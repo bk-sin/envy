@@ -3,9 +3,9 @@ import { InfoCard } from "./info-card";
 
 export function Problems() {
   return (
-    <section className="py-24 bg-white">
+    <section id="problems" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-slate-900 mb-6">
+        <h2 className="text-5xl font-bold text-slate-900 mb-6">
           El caos de los archivos .env
         </h2>
         <p className="text-xl text-slate-600 mb-16 max-w-3xl mx-auto">

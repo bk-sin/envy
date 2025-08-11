@@ -18,20 +18,26 @@ export const CliSimulator = () => (
       </div>
       <div className="p-6 font-mono text-sm">
         <div className="space-y-3">
-          <p>
+          <div className="flex items-center">
             <span className="text-emerald-400 mr-2">$</span>
-            <span className="text-white">npm install -g secretsync</span>
-          </p>
-          <p className="text-slate-400 ml-4">✓ Installed successfully</p>
-          <p className="mt-4">
+            <span className="text-white typing-animation">
+              npm install -g secretsync
+            </span>
+          </div>
+          <div className="text-slate-400 ml-4">✓ Installed successfully</div>
+
+          <div className="flex items-center mt-4">
             <span className="text-emerald-400 mr-2">$</span>
             <span className="text-white">secretsync login</span>
-          </p>
-          <p className="text-slate-400 ml-4">✓ Authenticated successfully</p>
-          <p className="mt-4">
+          </div>
+          <div className="text-slate-400 ml-4">
+            ✓ Authenticated successfully
+          </div>
+
+          <div className="flex items-center mt-4">
             <span className="text-emerald-400 mr-2">$</span>
             <span className="text-white">secretsync pull</span>
-          </p>
+          </div>
           <div className="text-slate-400 ml-4">
             <div>📦 Syncing variables for project: e-commerce-api</div>
             <div>🔄 Environment: development</div>
