@@ -1,9 +1,13 @@
-# Ignore API and other apps when deploying web
-apps/api/
+# Only ignore dev files and caches, but keep both API and web
 packages/*/node_modules
-node_modules
-.env*
-.git
+node_modules/.cache
 *.log
 .DS_Store
 .vscode/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Keep both apps for full stack deployment
+# No longer ignoring apps/api/

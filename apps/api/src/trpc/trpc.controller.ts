@@ -17,7 +17,7 @@ export class TrpcController {
       endpoint: '/trpc',
       req: new globalThis.Request(url, {
         method: req.method,
-        headers: req.headers as HeadersInit,
+        headers: req.headers as Record<string, string>,
         body:
           req.method !== 'GET' && req.method !== 'HEAD'
             ? JSON.stringify(req.body)

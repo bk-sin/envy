@@ -36,5 +36,10 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@9.0.0"
+  "packageManager": "pnpm@8.15.6",
+  "pnpm": {
+    "overrides": {
+      "@swc/helpers": "^0.5.17"
+    }
+  }
 }

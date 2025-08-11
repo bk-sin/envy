@@ -1,6 +1,6 @@
 {
-  "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
+    "lib": ["es2023"],
     "module": "commonjs",
     "moduleResolution": "Node",
     "declaration": true,
@@ -12,12 +12,16 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "strictBindCallApply": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true
   }
 }

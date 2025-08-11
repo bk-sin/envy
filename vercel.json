@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "builds": [
+    {
+      "src": "apps/web/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "apps/api/vercel.ts",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "apps/api/src/**",
+          "apps/api/prisma/**",
+          "apps/api/generated/**",
+          "apps/api/dist/**",
+          "packages/typescript-config/**"
+        ],
+        "buildCommand": "cd apps/api && pnpm dlx prisma generate && cd ../.. && npm run build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "apps/api/vercel.ts"
+    },
+    {
+      "src": "/trpc/(.*)",
+      "dest": "apps/api/vercel.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "apps/web/$1"
+    }
+  ]
+}
