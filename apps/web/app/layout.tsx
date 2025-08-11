@@ -27,9 +27,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Envy Team" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "16x16", type: "image/x-icon" }
+    ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: "/apple-icon.png",
   },
 };
 
