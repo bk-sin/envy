@@ -1,0 +1,9 @@
+# Ignore API and other apps when deploying web
+apps/api/
+packages/*/node_modules
+node_modules
+.env*
+.git
+*.log
+.DS_Store
+.vscode/

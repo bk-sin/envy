@@ -21,14 +21,14 @@ export const CliSimulator = () => (
           <div className="flex items-center">
             <span className="text-emerald-400 mr-2">$</span>
             <span className="text-white typing-animation">
-              npm install -g secretsync
+              npm install -g envy
             </span>
           </div>
           <div className="text-slate-400 ml-4">✓ Installed successfully</div>
 
           <div className="flex items-center mt-4">
             <span className="text-emerald-400 mr-2">$</span>
-            <span className="text-white">secretsync login</span>
+            <span className="text-white">envy login</span>
           </div>
           <div className="text-slate-400 ml-4">
             ✓ Authenticated successfully
@@ -36,7 +36,7 @@ export const CliSimulator = () => (
 
           <div className="flex items-center mt-4">
             <span className="text-emerald-400 mr-2">$</span>
-            <span className="text-white">secretsync pull</span>
+            <span className="text-white">envy pull</span>
           </div>
           <div className="text-slate-400 ml-4">
             <div>📦 Syncing variables for project: e-commerce-api</div>

@@ -59,7 +59,7 @@ export const featuresData = [
     icon: Terminal,
     title: "CLI Sencilla",
     description:
-      "Un simple 'secretsync pull' y tu archivo .env se actualiza automáticamente. Sin copiar, sin pegar.",
+      "Un simple 'envy pull' y tu archivo .env se actualiza automáticamente. Sin copiar, sin pegar.",
     iconBgColor: "bg-emerald-100",
     iconTextColor: "text-emerald-600",
   },

@@ -1,0 +1,6 @@
+# Vercelignore for web app only
+../../apps/api/
+../../packages/
+node_modules
+.env*
+.git

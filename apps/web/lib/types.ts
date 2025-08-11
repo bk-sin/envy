@@ -1,1 +1,5 @@
-export type { AppRouter } from "../../api/src/trpc/router";
+export interface AppRouter {
+  health: {
+    query: () => Promise<string>;
+  };
+}
