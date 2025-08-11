@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { BetaModule } from './beta/beta.module';
 import { TrpcController } from './trpc/trpc.controller';
 
 @Module({
@@ -15,6 +16,7 @@ import { TrpcController } from './trpc/trpc.controller';
     PrismaModule,
     UsersModule,
     AuthModule,
+    BetaModule,
   ],
   controllers: [TrpcController],
   providers: [

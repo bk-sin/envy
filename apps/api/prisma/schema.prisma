@@ -175,6 +175,16 @@ model AuditLog {
   @@map("audit_logs")
 }
 
+model BetaSubscription {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  subscribedAt DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("beta_subscriptions")
+}
+
 enum Role {
   OWNER
   ADMIN
