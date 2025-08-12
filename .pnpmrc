@@ -1,3 +1,0 @@
-auto-install-peers=true
-dedupe-peer-dependents=false
-strict-peer-dependencies=false

@@ -2,25 +2,11 @@
   "name": "envy",
   "version": "1.0.0",
   "scripts": {
-    "start": "turbo run start",
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types",
-    "dev:api": "turbo run dev --filter=api",
-    "dev:web": "turbo run dev --filter=web",
-    "build:api": "turbo run build --filter=api",
-    "build:web": "turbo run build --filter=web",
-    "lint:api": "turbo run lint --filter=api",
-    "lint:web": "turbo run lint --filter=web",
-    "check-types:api": "turbo run check-types --filter=api",
-    "check-types:web": "turbo run check-types --filter=web"
-  },
-  "devDependencies": {
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.5",
-    "typescript": "5.8.3"
+    "dev": "pnpm run --sequential dev",
+    "build:server": "pnpm --filter server build",
+    "build:web": "pnpm --filter web build",
+    "start:server": "pnpm --filter server start:prod",
+    "start:web": "pnpm --filter web start"
   },
   "repository": {
     "type": "git",
@@ -32,14 +18,5 @@
   "bugs": {
     "url": "https://github.com/bk-sin/envy/issues"
   },
-  "homepage": "https://github.com/bk-sin/envy#readme",
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "pnpm@8.15.6",
-  "pnpm": {
-    "overrides": {
-      "@swc/helpers": "^0.5.17"
-    }
-  }
+  "homepage": "https://github.com/bk-sin/envy#readme"
 }
