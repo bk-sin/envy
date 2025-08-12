@@ -2,10 +2,10 @@
   "name": "envy",
   "version": "1.0.0",
   "scripts": {
-    "dev": "pnpm run --sequential dev",
-    "build:server": "pnpm --filter server build",
+    "dev": "pnpm run --parallel dev",
+    "build:api": "pnpm --filter api build",
     "build:web": "pnpm --filter web build",
-    "start:server": "pnpm --filter server start:prod",
+    "start:api": "pnpm --filter api start:prod",
     "start:web": "pnpm --filter web start"
   },
   "repository": {

@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { BetaModule } from './beta/beta.module';
 import { TrpcController } from './trpc/trpc.controller';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -18,7 +19,7 @@ import { TrpcController } from './trpc/trpc.controller';
     AuthModule,
     BetaModule,
   ],
-  controllers: [TrpcController],
+  controllers: [TrpcController, AppController],
   providers: [
     {
       provide: APP_GUARD,
