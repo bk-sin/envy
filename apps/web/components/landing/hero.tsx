@@ -1,8 +1,10 @@
 import { Check, Rocket } from "lucide-react";
 import { CliSimulator } from "./cli-simulator";
 import { EmailForm } from "./email-form";
+import { useTranslations } from 'next-intl';
 
 export function Hero() {
+  const t = useTranslations('hero');
   return (
     <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 h-[800px] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div>
@@ -12,28 +14,27 @@ export function Hero() {
         <div className="text-white">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium mb-8">
             <Rocket className="text-indigo-400 mr-2 w-4 h-4" />
-            Unite a la Beta Privada
+            {t('beta')}
           </div>
           <h1 className="text-5xl lg:text-6xl font-black leading-tighter mb-6">
-            Deja de pasar archivos{" "}
+            {t('title.pre')} {" "}
             <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
               .env
             </span>{" "}
-            por Slack
+            {t('title.post')}
           </h1>
           <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-            Sincroniza a tu equipo en 60 segundos. Gestiona variables de entorno
-            de forma segura y automática.
+            {t('subtitle')}
           </p>
           <EmailForm />
           <div className="flex items-center space-x-6 text-sm text-slate-400 mt-8">
             <div className="flex items-center">
               <Check className="text-emerald-400 mr-2 w-4 h-4" />
-              Sin tarjeta de crédito
+              {t('creditCard')}
             </div>
             <div className="flex items-center">
               <Check className="text-emerald-400 mr-2 w-4 h-4" />
-              Setup en 2 minutos
+              {t('setup')}
             </div>
           </div>
         </div>

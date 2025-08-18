@@ -1,21 +1,23 @@
 import type { LucideProps } from "lucide-react";
+import { useTranslations } from "next-intl";
 import type { FC } from "react";
 
 interface FeatureCardProps {
   icon: FC<LucideProps>;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   iconBgColor: string;
   iconTextColor: string;
 }
 
 export function FeatureCard({
   icon: Icon,
-  title,
-  description,
+  titleKey,
+  descriptionKey,
   iconBgColor,
   iconTextColor,
 }: FeatureCardProps) {
+  const t = useTranslations("featuresData");
   return (
     <div className="flex items-start space-x-4">
       <div
@@ -24,8 +26,8 @@ export function FeatureCard({
         <Icon className={`w-6 h-6 ${iconTextColor}`} />
       </div>
       <div>
-        <h3 className="text-xl font-bold text-slate-900 mb-2">{title}</h3>
-        <p className="text-slate-600">{description}</p>
+        <h3 className="text-xl font-bold text-slate-900 mb-2">{t(titleKey)}</h3>
+        <p className="text-slate-600">{t(descriptionKey)}</p>
       </div>
     </div>
   );

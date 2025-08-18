@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "beta": "Join the Private Beta",
+    "title": {
+      "pre": "Stop sharing",
+      "post": "files on Slack"
+    },
+    "subtitle": "Sync your team in 60 seconds. Manage environment variables securely and automatically.",
+    "creditCard": "No credit card required",
+    "setup": "Setup in 2 minutes"
+  },
+  "header": {
+    "signIn": "Sign in",
+    "getStarted": "Get started",
+    "nav": {
+      "problems": "Problem",
+      "solutions": "Solution",
+      "beta": "Beta"
+    }
+  },
+  "problems": {
+    "title": "The chaos of .env files",
+    "description": "Sounds familiar? Your team shares variables on Slack, nobody knows the latest version, and bugs appear because every developer has different configurations."
+  },
+  "solutions": {
+    "title": "The solution your team needs",
+    "description": "A centralized platform with CLI that automatically syncs your team's environment variables."
+  },
+  "ctaSection": {
+    "title": "Ready to sync your team?",
+    "description": "Join and sync your team without complex setups or issues.",
+    "free": "Free during beta",
+    "instant": "Instant access",
+    "support": "Priority support"
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "support": "Support"
+  },
+  "cliSimulator": {
+    "terminal": "Terminal",
+    "install": "npm install -g envy",
+    "installed": "✓ Installed successfully",
+    "login": "envy login",
+    "authenticated": "✓ Authenticated successfully",
+    "pull": "envy pull",
+    "syncing": "📦 Syncing variables for project: e-commerce-api",
+    "environment": "🔄 Environment: development",
+    "updated": "✓ .env file updated with 18 variables",
+    "success": "🎉 Your team is now in sync!"
+  },
+  "dashboardPreview": {
+    "title": "Envy Dashboard",
+    "project": "E-commerce API",
+    "variables": "18 variables",
+    "synced": "Synced",
+    "title_es": "Tablero de Envy",
+    "project_es": "API de comercio electrónico",
+    "variables_es": "18 variables",
+    "synced_es": "Sincronizado"
+  },
+  "emailForm": {
+    "placeholder": "your@email.com",
+    "sending": "Sending",
+    "cta": "Join the Beta",
+    "success": "Awesome! You have joined the waitlist. You'll hear about the beta soon.",
+    "error": "There was an error processing your request. Please try again.",
+    "connectionError": "Connection error. Check your internet connection and try again.",
+    "invalidEmail": "Please enter a valid email address"
+  },
+  "integrations": {
+    "vercel": "Vercel",
+    "netlify": "Netlify",
+    "github": "GitHub Actions",
+    "docker": "Docker"
+  },
+  "problemsData": [
+    {
+      "title": "Insecure",
+      "description": "Secrets shared via Slack, email or worse... uploaded to the repository"
+    },
+    {
+      "title": "Slow",
+      "description": "Hours lost manually syncing every change with the team"
+    },
+    {
+      "title": "Error-prone",
+      "description": "Inconsistencies between environments that cause bugs in production"
+    }
+  ],
+  "featuresData": {
+    "dashboard": {
+      "title": "Centralized Dashboard",
+      "description": "Manage projects and variables from a clean interface. Define environments, assign permissions, and keep everything organized."
+    },
+    "cli": {
+      "title": "Simple CLI",
+      "description": "A simple 'envy pull' and your .env file is updated automatically. No copy, no paste."
+    },
+    "access": {
+      "title": "Access Control",
+      "description": "Granular roles. Juniors see development, seniors access production. Security made easy."
+    }
+  },
+  "insecure": {
+    "title": "Insecure .env Sharing",
+    "description": "Stop sending .env files by email or chat. Avoid leaks and keep secrets safe."
+  },
+  "slow": {
+    "title": "Slow Onboarding",
+    "description": "No more waiting for access. New team members get the right environment instantly."
+  },
+  "errorProne": {
+    "title": "Error-Prone Process",
+    "description": "Manual copying leads to mistakes. Automate and reduce human error."
+  }
+}

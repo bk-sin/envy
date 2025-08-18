@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "beta": "Unite a la Beta Privada",
+    "title": {
+      "pre": "Deja de pasar archivos",
+      "post": "por Slack"
+    },
+    "subtitle": "Sincroniza a tu equipo en 60 segundos. Gestiona variables de entorno de forma segura y automática.",
+    "creditCard": "Sin tarjeta de crédito",
+    "setup": "Setup en 2 minutos"
+  },
+  "header": {
+    "signIn": "Iniciar sesión",
+    "getStarted": "Comenzar",
+    "nav": {
+      "problems": "Problema",
+      "solutions": "Solución",
+      "beta": "Beta"
+    }
+  },
+  "problems": {
+    "title": "El caos de los archivos .env",
+    "description": "¿Te suena familiar? Tu equipo comparte variables por Slack, nadie sabe cuál es la última versión, y los bugs aparecen porque cada desarrollador tiene configuraciones diferentes."
+  },
+  "solutions": {
+    "title": "La solución que tu equipo necesita",
+    "description": "Una plataforma centralizada con CLI que sincroniza automáticamente las variables de entorno de todo tu equipo."
+  },
+  "ctaSection": {
+    "title": "¿Listo para sincronizar a tu equipo?",
+    "description": "Unite y sincroniza tu equipo sin configuraciones complejas y sin problemas.",
+    "free": "Gratis durante la beta",
+    "instant": "Acceso inmediato",
+    "support": "Soporte prioritario"
+  },
+  "footer": {
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "support": "Soporte"
+  },
+  "cliSimulator": {
+    "terminal": "Terminal",
+    "install": "npm install -g envy",
+    "installed": "✓ Instalado correctamente",
+    "login": "envy login",
+    "authenticated": "✓ Autenticado correctamente",
+    "pull": "envy pull",
+    "syncing": "📦 Sincronizando variables para el proyecto: e-commerce-api",
+    "environment": "🔄 Entorno: development",
+    "updated": "✓ Archivo .env actualizado con 18 variables",
+    "success": "🎉 ¡Tu equipo ya está sincronizado!"
+  },
+  "dashboardPreview": {
+    "title": "Envy Dashboard",
+    "project": "E-commerce API",
+    "variables": "18 variables",
+    "synced": "Sincronizado",
+    "notSynced": "No sincronizado",
+    "syncNow": "Sincronizar ahora",
+    "viewDetails": "Ver detalles",
+    "lastSynced": "Última sincronización: hace 5 minutos"
+  },
+  "emailForm": {
+    "placeholder": "tu@email.com",
+    "sending": "Enviando",
+    "cta": "Acceder a la Beta",
+    "success": "¡Genial! Te has unido a la lista de espera. Pronto recibirás noticias sobre la beta.",
+    "error": "Hubo un error al procesar tu solicitud. Inténtalo de nuevo.",
+    "connectionError": "Error de conexión. Verifica tu conexión a internet e inténtalo de nuevo.",
+    "invalidEmail": "Por favor ingresa un email válido"
+  },
+  "integrations": {
+    "vercel": "Vercel",
+    "netlify": "Netlify",
+    "github": "GitHub Actions",
+    "docker": "Docker"
+  },
+  "problemsData": [
+    {
+      "title": "Inseguro",
+      "description": "Secretos compartidos por Slack, email o peor... subidos al repositorio"
+    },
+    {
+      "title": "Lento",
+      "description": "Horas perdidas sincronizando manualmente cada cambio con el equipo"
+    },
+    {
+      "title": "Propenso a errores",
+      "description": "Inconsistencias entre entornos que generan bugs en producción"
+    }
+  ],
+  "featuresData": {
+    "dashboard": {
+      "title": "Panel Centralizado",
+      "description": "Gestiona proyectos y variables desde una interfaz limpia. Define entornos, asigna permisos y mantén todo organizado."
+    },
+    "cli": {
+      "title": "CLI Sencilla",
+      "description": "Un simple 'envy pull' y tu archivo .env se actualiza automáticamente. Sin copiar ni pegar."
+    },
+    "access": {
+      "title": "Control de Acceso",
+      "description": "Roles granulares. Juniors ven desarrollo, seniors acceden a producción. Seguridad simplificada."
+    }
+  },
+  "insecure": {
+    "title": "Compartir .env Inseguro",
+    "description": "Deja de enviar archivos .env por email o chat. Evita filtraciones y mantén los secretos seguros."
+  },
+  "slow": {
+    "title": "Onboarding Lento",
+    "description": "No más esperas para acceso. Los nuevos miembros obtienen el entorno correcto al instante."
+  },
+  "errorProne": {
+    "title": "Proceso Propenso a Errores",
+    "description": "Copiar manualmente genera errores. Automatiza y reduce el error humano."
+  }
+}

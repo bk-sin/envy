@@ -1,10 +1,11 @@
+import { useTranslations } from "next-intl";
 import type { LucideProps } from "lucide-react";
 import type { FC } from "react";
 
 interface InfoCardProps {
   icon: FC<LucideProps>;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   bgColor: string;
   borderColor: string;
   iconBgColor: string;
@@ -13,13 +14,14 @@ interface InfoCardProps {
 
 export function InfoCard({
   icon: Icon,
-  title,
-  description,
+  titleKey,
+  descriptionKey,
   bgColor,
   borderColor,
   iconBgColor,
   iconTextColor,
 }: InfoCardProps) {
+  const t = useTranslations();
   return (
     <div className={`p-8 rounded-2xl border ${bgColor} ${borderColor}`}>
       <div
@@ -27,8 +29,8 @@ export function InfoCard({
       >
         <Icon className={`w-8 h-8 ${iconTextColor}`} />
       </div>
-      <h3 className="text-xl font-bold text-slate-900 mb-4">{title}</h3>
-      <p className="text-slate-600">{description}</p>
+      <h3 className="text-xl font-bold text-slate-900 mb-4">{t(titleKey)}</h3>
+      <p className="text-slate-600">{t(descriptionKey)}</p>
     </div>
   );
 }

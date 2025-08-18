@@ -1,7 +1,9 @@
 import { Check } from "lucide-react";
 import { EmailForm } from "./email-form";
+import { useTranslations } from 'next-intl';
 
 export function CtaSection() {
+  const t = useTranslations('ctaSection');
   return (
     <section
       id="beta"
@@ -9,11 +11,10 @@ export function CtaSection() {
     >
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-          ¿Listo para sincronizar a tu equipo?
+          {t('title')}
         </h2>
         <p className="text-xl text-slate-300 mb-12">
-          Unite y sincroniza tu equipo sin configuraciones complejas y sin
-          problemas.
+          {t('description')}
         </p>
         <div className="max-w-md mx-auto mb-8">
           <EmailForm />
@@ -21,15 +22,15 @@ export function CtaSection() {
         <div className="flex items-center justify-center space-x-8 text-sm text-slate-400">
           <div className="flex items-center">
             <Check className="text-emerald-400 mr-2 w-4 h-4" />
-            Gratis durante la beta
+            {t('free')}
           </div>
           <div className="flex items-center">
             <Check className="text-emerald-400 mr-2 w-4 h-4" />
-            Acceso inmediato
+            {t('instant')}
           </div>
           <div className="flex items-center">
             <Check className="text-emerald-400 mr-2 w-4 h-4" />
-            Soporte prioritario
+            {t('support')}
           </div>
         </div>
       </div>

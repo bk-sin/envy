@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { EnvyIcon } from "../ui/envy-icon";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,19 +17,19 @@ export function Footer() {
               href="#"
               className="hover:text-white cursor-pointer transition-colors"
             >
-              Privacy
+              {t("privacy")}
             </Link>
             <Link
               href="#"
               className="hover:text-white cursor-pointer transition-colors"
             >
-              Terms
+              {t("terms")}
             </Link>
             <Link
               href="#"
               className="hover:text-white cursor-pointer transition-colors"
             >
-              Support
+              {t("support")}
             </Link>
           </div>
         </div>

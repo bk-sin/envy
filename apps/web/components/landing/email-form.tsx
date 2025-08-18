@@ -6,21 +6,28 @@ import { z } from "zod";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
+import { useTranslations } from 'next-intl';
 
+const tZod = typeof window !== 'undefined' ? undefined : () => '';
+const t = typeof window !== 'undefined' ? undefined : () => '';
+const emailFormT = typeof window !== 'undefined' ? undefined : () => '';
 const emailSchema = z.object({
-  email: z.email("Por favor ingresa un email válido"),
+  email: z.string().email(),
 });
 
 type EmailFormData = z.infer<typeof emailSchema>;
 
 export function EmailForm() {
+  const t = useTranslations('emailForm');
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
   } = useForm<EmailFormData>({
-    resolver: zodResolver(emailSchema),
+    resolver: zodResolver(z.object({
+      email: z.string().email(t('invalidEmail')),
+    })),
   });
 
   const onSubmit = async (data: EmailFormData) => {
@@ -33,24 +40,16 @@ export function EmailForm() {
 
       if (response.ok) {
         reset();
-        toast.success(
-          "¡Genial! Te has unido a la lista de espera. Pronto recibirás noticias sobre la beta.",
-          {
-            duration: 5000,
-          }
-        );
+        toast.success(t('success'), {
+          duration: 5000,
+        });
       } else {
         const errorData = await response.json();
-        toast.error(
-          errorData.message ||
-            "Hubo un error al procesar tu solicitud. Inténtalo de nuevo."
-        );
+        toast.error(errorData.message || t('error'));
       }
     } catch (error) {
       console.error("Newsletter subscription error:", error);
-      toast.error(
-        "Error de conexión. Verifica tu conexión a internet e inténtalo de nuevo."
-      );
+      toast.error(t('connectionError'));
     }
   };
 
@@ -63,7 +62,7 @@ export function EmailForm() {
         <Input
           {...register("email")}
           type="email"
-          placeholder="tu@email.com"
+          placeholder={t('placeholder')}
           className="w-full h-14 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent"
         />
         {errors.email && (
@@ -78,10 +77,10 @@ export function EmailForm() {
         {isSubmitting ? (
           <>
             <LoaderCircle className="inline-block mr-2 w-4 h-4 animate-spin" />
-            Enviando
+            {t('sending')}
           </>
         ) : (
-          "Acceder a la Beta"
+          t('cta')
         )}
       </Button>
     </form>

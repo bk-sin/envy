@@ -7,18 +7,11 @@ import {
   Users,
 } from "lucide-react";
 
-export const navLinks = [
-  { href: "#problems", label: "Problema" },
-  { href: "#solutions", label: "Solución" },
-  { href: "#beta", label: "Beta" },
-];
-
 export const problemsData = [
   {
     icon: AlertTriangle,
-    title: "Inseguro",
-    description:
-      "Secretos compartidos por Slack, email o peor... subidos al repositorio",
+    titleKey: "insecure.title",
+    descriptionKey: "insecure.description",
     bgColor: "bg-red-50",
     borderColor: "border-red-200",
     iconBgColor: "bg-red-100",
@@ -26,9 +19,8 @@ export const problemsData = [
   },
   {
     icon: Clock,
-    title: "Lento",
-    description:
-      "Horas perdidas sincronizando manualmente cada cambio con el equipo",
+    titleKey: "slow.title",
+    descriptionKey: "slow.description",
     bgColor: "bg-amber-50",
     borderColor: "border-amber-200",
     iconBgColor: "bg-amber-100",
@@ -36,9 +28,8 @@ export const problemsData = [
   },
   {
     icon: Bug,
-    title: "Propenso a errores",
-    description:
-      "Inconsistencias entre entornos que generan bugs en producción",
+    titleKey: "errorProne.title",
+    descriptionKey: "errorProne.description",
     bgColor: "bg-slate-50",
     borderColor: "border-slate-200",
     iconBgColor: "bg-slate-100",
@@ -49,34 +40,32 @@ export const problemsData = [
 export const featuresData = [
   {
     icon: Gauge,
-    title: "Dashboard Centralizado",
-    description:
-      "Gestiona proyectos y variables desde una interfaz limpia. Definí entornos, asigna permisos y mantén todo organizado.",
+    titleKey: "dashboard.title",
+    descriptionKey: "dashboard.description",
     iconBgColor: "bg-indigo-100",
     iconTextColor: "text-indigo-600",
   },
   {
     icon: Terminal,
-    title: "CLI Sencilla",
-    description:
-      "Un simple 'envy pull' y tu archivo .env se actualiza automáticamente. Sin copiar, sin pegar.",
+    titleKey: "cli.title",
+    descriptionKey: "cli.description",
     iconBgColor: "bg-emerald-100",
     iconTextColor: "text-emerald-600",
   },
   {
     icon: Users,
-    title: "Control de Acceso",
-    description:
-      "Roles granulares. Los juniors ven development, los seniors acceden a production. Seguridad sin complicaciones.",
+    titleKey: "access.title",
+    descriptionKey: "access.description",
     iconBgColor: "bg-purple-100",
     iconTextColor: "text-purple-600",
-  } /* 
+  },
+  /*
   {
     icon: Puzzle,
-    title: "Integraciones",
-    description:
-      "Conecta con Vercel, Netlify, GitHub Actions, Docker. Inyecta variables de forma segura en tus pipelines de CI/CD.",
+    titleKey: "integrations.title",
+    descriptionKey: "integrations.description",
     iconBgColor: "bg-orange-100",
     iconTextColor: "text-orange-600",
-  }, */,
+  },
+  */
 ];
